@@ -10,3 +10,5 @@ build*
 doxygen
 /.github
 /.vscode
+/.github
+/.vscode
