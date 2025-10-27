@@ -8,3 +8,5 @@ build*
 /examples/cmake-build*
 /examples/build*
 doxygen
+/.github
+/.vscode
