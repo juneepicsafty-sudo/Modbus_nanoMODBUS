@@ -36,7 +36,15 @@ int32_t read_serial(uint8_t* buf, uint16_t count, int32_t byte_timeout_ms, void*
 }
 
 int32_t write_serial(const uint8_t* buf, uint16_t count, int32_t byte_timeout_ms, void* arg) {
-    return WriteToCommPort(hComm, buf, count);
+    printf("Writing %u bytes: ", count);
+    for (uint16_t i = 0; i < count; i++) {
+        printf("%02X ", buf[i]);
+    }
+    printf("\n");
+    return WriteToCommPort(hComm, (uint8_t*) buf, count);
+    // return WriteToCommPort(hComm, buf, count);
+    // // The original WriteToCommPort doesn't use a timeout, so we pass 0.
+    // return WriteToCommPort(hComm, (uint8_t*)buf, count);
 }
 
 void onError(nmbs_error err) {

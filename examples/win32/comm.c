@@ -68,7 +68,7 @@ bool InitCommPort(HANDLE* hComm, int PortNumber) {
     if (*hComm == INVALID_HANDLE_VALUE)
         return false;
 
-    Status = SetLocalBaudRate(*hComm, 9600);
+    Status = SetLocalBaudRate(*hComm, 115200);
     if (!Status)
         return false;
 

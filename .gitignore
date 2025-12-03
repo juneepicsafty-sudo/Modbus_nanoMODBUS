@@ -12,3 +12,5 @@ doxygen
 /.vscode
 /.github
 /.vscode
+/.vs
+/examples/win32
